@@ -4,8 +4,8 @@ import "./App.css";
 import Navbar from "./component/Navbar.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./component/Footer.js";
-import Attractions from "./component/Attractions.js";
-import FilmList from "./component/FilmList.js";
+import Books from "./component/Books.js";
+import BookContextProvider from './contexts/BookContextProvider'
 
 
 
@@ -14,12 +14,13 @@ import FilmList from "./component/FilmList.js";
 function App() {
   return (
     <div className="App">
+      <BookContextProvider>
       <Router>
         <Navbar />
-        <Attractions/>
-        <Route exact path="/" component={FilmList} />
+        <Route exact path="/" component={Books} />
         <Footer />
       </Router>
+      </BookContextProvider>
     </div>
   );
 }
