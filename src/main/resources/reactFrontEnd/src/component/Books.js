@@ -13,7 +13,7 @@ export default function Books() {
               <Row>
                 <Col >
                 <h1>{book.title}</h1>
-                <p>{book.writer}</p>
+                <p>{book.date}</p>
 
                 </Col>
               </Row>
