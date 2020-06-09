@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 export default function ShowBook() {
     let { id } = useParams();
-  const [film, setFilm] = useState("");
+  const [book, setBook] = useState("");
 
-  const getFilm = async (id) => {
-    let res = await fetch("/rest/films/" + id);
+  const getBook = async (id) => {
+    let res = await fetch("/rest/books/" + id);
     res = await res.json();
-    setFilm(res);
+    setBook(res);
   };
 
   useEffect(() => {
-    getFilm(id);
+    getBook(id);
   }, []);
 
   return (
     <div>
-      <h3>THis is One Film Page</h3>
-      {film.film_name}
+     <Row>
+      <Col sm="6">
+        <Card body>
+          <CardTitle><h3>THis is One book Page</h3></CardTitle>
+          <CardText>{book.title}</CardText>
+          <CardText>{book.writer}</CardText>
+          <CardText>{book.date}</CardText>
+          <Button>Go to the list</Button>
+        </Card>
+      </Col>
+      </Row>
+      
     </div>
     )
 }
