@@ -22,13 +22,13 @@ const TopNavbar = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Iran Attractions</NavbarBrand>
+        <NavbarBrand href="/">MAIN LISTA</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
         
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">About us</NavLink>
+                <NavLink href="../AddBook.js/">About us</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="">Contact Us</NavLink>
