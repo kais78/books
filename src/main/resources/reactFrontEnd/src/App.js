@@ -5,7 +5,9 @@ import Navbar from "./component/Navbar.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./component/Footer.js";
 import Books from "./component/Books.js";
-import BookContextProvider from './contexts/BookContextProvider'
+import BookContextProvider from './contexts/BookContextProvider';
+import ShowBook from "./component/ShowBook.js";
+import AddBook from "./component/addBook.js";
 
 
 
@@ -18,6 +20,9 @@ function App() {
       <Router>
         <Navbar />
         <Route exact path="/" component={Books} />
+        <Route exact path="/:id" children={<ShowBook />} />
+        <Route exact path="/new" component={AddBook} />
+
         <Footer />
       </Router>
       </BookContextProvider>

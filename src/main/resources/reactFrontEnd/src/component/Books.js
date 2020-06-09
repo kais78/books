@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import { Card, CardTitle, CardText } from 'reactstrap';
 import { BookContext } from '../contexts/BookContextProvider'
 import { CardImg,CardDeck, CardSubtitle, CardBody,Row,Col,Container } from 'reactstrap';
 import './Boks.css';
+import ShowBook from './ShowBook';
 
 
 
@@ -22,9 +24,11 @@ export default function Books() {
             <Container>
               <Row>
                 <Col >
+                <Link to={`/${book.id}`}>
                 <h1>{book.title}</h1>
                 <p>{book.writer}</p>
                 <p>{book.date}</p>
+                </Link>
                 </Col>
               </Row>
             </Container>
