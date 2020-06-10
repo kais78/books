@@ -28,7 +28,7 @@ const TopNavbar = (props) => {
         
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink href="../AddBook.js/">About us</NavLink>
+                <NavLink href="./AddBook.js/">ADD BOOK</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="">Contact Us</NavLink>

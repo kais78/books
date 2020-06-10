@@ -15,56 +15,33 @@ export default function Books() {
   const list = () => {
     return allBooks.map((book, i) => {
       return (
-        <CardDeck>
-        <Card className="body1">
-          <CardBody>
-            <CardTitle className="card1"><h1></h1></CardTitle>
-            <CardSubtitle><p></p></CardSubtitle>
-            <Card key={i}>
-            <Container>
-              <Row>
-                <Col >
-                <Link to={`/${book.id}`}>
-                <h1>{book.title}</h1>
-                <p>{book.writer}</p>
-                <p>{book.date}</p>
-                </Link>
-                </Col>
-              </Row>
-            </Container>
-          </Card>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>This card has supporting text below as a natural lead-in to additional content.</CardText>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
-          </CardBody>
-        </Card>
-      </CardDeck>
+        <div>
+           <br/>
+        <Row  xs="2">
+        <Col >
+          <Card body>
+          <Link to={`/${book.id}`}>
+              <h1>{book.title}</h1>
+              <p>{book.writer}</p>
+              <p>{book.date}</p>
+              </Link>
+            <CardTitle>Special Title Treatment</CardTitle>
+            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+          </Card><br></br>
+        </Col>
+        <Col >
+          <Card body>
+            <CardTitle>Special Title Treatment</CardTitle>
+            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+          </Card><br></br>
+        </Col>
+      </Row>
+      </div>    
       )
       
     })
   }
-
+ 
   return (
     <>
       {list()}

@@ -18,8 +18,9 @@ export default function ShowBook() {
 
   return (
     <div>
+        <br></br>
      <Row>
-      <Col sm="6">
+      <Col sm="12" md={{ size: 6, offset: 3 }}>
         <Card body>
           <CardTitle><h3>THis is One book Page</h3></CardTitle>
           <CardText>{book.title}</CardText>
