@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import { Card, CardTitle, CardText } from 'reactstrap';
+import { Card, CardTitle, Row,Col, CardText } from 'reactstrap';
 import { BookContext } from '../contexts/BookContextProvider'
-import { CardImg,CardDeck, CardSubtitle, CardBody,Row,Col,Container } from 'reactstrap';
 import './Boks.css';
-import ShowBook from './ShowBook';
 
 
 
