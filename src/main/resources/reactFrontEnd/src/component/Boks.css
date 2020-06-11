@@ -4,3 +4,6 @@
     text-decoration-skip: black;
     box-shadow: 4px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.row{
+    margin: 0px;
+}

@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import {BookContext} from '../contexts/BookContextProvider'
 
 
 export default function AddBook(props) {
+  const {appendBooks} = useContext(BookContext)
     const [title, settitle] = useState('');
     const [writer, setwriter] = useState('');
     const [date, setdate] = useState('');
+    const [cover,setcover] = useState('');
 
     const addBook = async (e) => {
         e.preventDefault()
@@ -13,7 +16,8 @@ export default function AddBook(props) {
         const book = {
             title: title, 
             writer: writer,
-            date: +date
+            date: +date,
+            cover:cover
           }
 
            // send new book to backend
@@ -23,6 +27,7 @@ export default function AddBook(props) {
         body: JSON.stringify(book)
       })
       res = await res.json()
+      appendBooks(res)
   
       props.history.push('/')
     }
@@ -30,10 +35,11 @@ export default function AddBook(props) {
 
    return (
     <Container>
+      
     <div className="mx-5 px-5">
     <h1>ADD NEW BOOK</h1>
     <Form onSubmit={addBook} className="my-5 p-5">
-      <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+      <FormGroup className="mt-3 mb-2 mr-sm-2 mb-sm-0">
         <Label for="title" className="mr-sm-2">TITLE</Label>
         <Input type="text" name="TITLE" id="title" placeholder="Title " onChange={e=>settitle(e.target.value)}/>
       </FormGroup>
@@ -46,6 +52,12 @@ export default function AddBook(props) {
         <Label for="date" className="mr-sm-2">DATE</Label>
         <Input type="text" name="Date" id="date" placeholder="Date"  onChange={e=>setdate(e.target.value)} />
       </FormGroup>
+
+      <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+        <Label for="cover" className="mr-sm-2">COVER</Label>
+        <Input type="text" name="cover" id="cover" placeholder="cover"  onChange={e=>setcover(e.target.value)}/>
+      </FormGroup>
+
       <Button>Submit</Button>
       </Form>
     </div>

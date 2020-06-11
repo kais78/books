@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import { Card, CardTitle, Row,Col, CardText } from 'reactstrap';
+import { Card, Row,Col } from 'reactstrap';
 import { BookContext } from '../contexts/BookContextProvider'
 import './Boks.css';
 
@@ -16,7 +16,7 @@ export default function Books() {
         <div>
            <br/>
         <Row  xs="2">
-        <Col sm="12" md={{ size: 6, offset: 3 }}>
+        <Col sm="10" md={{ size: 6, offset: 3 }}>
           <Card body>
           <Link style={{color:"black"}} to={`/${book.id}`}>
               <h1>{book.title}</h1>
