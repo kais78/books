@@ -1,9 +1,6 @@
 .card{
-  
-    background-color: rgba(228, 135, 182, 0.473);
-    box-shadow: 4px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.body1{
-
     background: url(./Img/ba1.jpg) no-repeat;
+    background-size: 65%;
+    text-decoration-skip: black;
+    box-shadow: 4px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

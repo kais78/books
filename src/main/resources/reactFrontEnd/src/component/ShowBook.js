@@ -22,10 +22,9 @@ export default function ShowBook() {
      <Row>
       <Col sm="12" md={{ size: 6, offset: 3 }}>
         <Card body>
-          <CardTitle><h3>THis is One book Page</h3></CardTitle>
-          <CardText>{book.title}</CardText>
-          <CardText>{book.writer}</CardText>
-          <CardText>{book.date}</CardText>
+          <CardText><h1>{book.title}</h1></CardText>
+          <CardText><h3>{book.writer}</h3></CardText>
+          <CardText><p>{book.date}</p></CardText>
           <Button>Go to the list</Button>
         </Card>
       </Col>
