@@ -20,13 +20,13 @@ const TopNavbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
+    <div className='navco'>
+      <Navbar   light expand="md">
         <NavbarBrand href="/">MAIN LISTA</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
         
-            <Nav className="mr-auto" navbar>
+            <Nav className="mr-auto" navbar >
               <NavItem>
                 <NavLink href="./new">ADD BOOK</NavLink>
               </NavItem>
@@ -37,13 +37,10 @@ const TopNavbar = (props) => {
                 <NavLink href="">Create Account</NavLink>
               </NavItem>
             </Nav>
-          
-        </Collapse>
-      </Navbar>
-      <br/>
-      <Row>
-      <Col xs="6" sm="4">best Medical books</Col>
-        <Col sm={{ size: 'auto', offset: 6 }}> 
+            
+            <Row>
+     
+        <Col sm={{ size: 'auto6', offset: -10 }}> 
         <UncontrolledDropdown>
       <DropdownToggle caret>
         Sort By
@@ -56,6 +53,10 @@ const TopNavbar = (props) => {
     </UncontrolledDropdown>
       </Col>
       </Row>
+        </Collapse>
+      </Navbar>
+      <hr className="hrstyle" />
+     
     </div>
   );
 };

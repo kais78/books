@@ -34,8 +34,8 @@ export default function AddBook(props) {
 
 
    return (
-    <Container>
-      
+     <div className='bak'>
+    <Container>  
     <div className="mx-5 px-5">
     <h1>ADD NEW BOOK</h1>
     <Form onSubmit={addBook} className="my-5 p-5">
@@ -62,5 +62,6 @@ export default function AddBook(props) {
       </Form>
     </div>
   </Container>
+  </div>
     )
 }
