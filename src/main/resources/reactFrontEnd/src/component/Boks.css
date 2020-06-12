@@ -9,3 +9,19 @@
     width: 50%;
     margin-left: 145px;
 }
+.bak{
+    background: url(./Img/55.jpg) center   no-repeat;
+    background-size: 100%;
+ }
+  .navco{
+    
+    box-shadow: 8px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: -webkit-linear-gradient(
+        left,
+        rgba(238, 36, 36, 0.9),
+        rgb(223, 217, 132),
+        rgba(211, 233, 197, 0.9)
+
+      )  }
+  
+    

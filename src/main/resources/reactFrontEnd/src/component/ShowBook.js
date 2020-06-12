@@ -28,17 +28,17 @@ export default function ShowBook(props) {
   }, []);
 
   return (
-    <div>
+    <div className='bak'>
         <br></br>
      <Row>
-      <Col sm="12" md={{ size: 6, offset: 3 }}>
+     <Col sm="10" md={{ size: 3, offset: 2 }}>
       {redirect??<Redirect to='/'/>}
         <Card body>
         <CardImg top width="100%" src={book.cover} alt="k" />
           <CardText><h1>{book.title}</h1></CardText>
           <CardText><h3>{book.writer}</h3></CardText>
           <CardText>{moment(book.date).format('llll')}</CardText>
-          <Col  sm={{ size: 'auto', offset: 10 }}>   
+          <Col  sm={{ size: 'auto', offset: 8 }}>   
                <Button onClick={() => deleteBook(id)} color="danger"outline>
                 DELETE<Badge color="secondary"> 
                 </Badge>
