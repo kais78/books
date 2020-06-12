@@ -1,6 +1,6 @@
 import React, { useEffect, useState,useContext  } from "react";
 import { useParams, Link,Redirect } from "react-router-dom";
-import { Card, Button,Badge,
+import { Card, Button,Badge,CardImg,
   CardTitle, CardText, Row, Col } from 'reactstrap';
 import {BookContext} from '../contexts/BookContextProvider'
 import moment from 'moment';
@@ -32,7 +32,9 @@ export default function ShowBook(props) {
         <br></br>
      <Row>
       <Col sm="12" md={{ size: 6, offset: 3 }}>
+      {redirect??<Redirect to='/'/>}
         <Card body>
+        <CardImg top width="100%" src={book.cover} alt="k" />
           <CardText><h1>{book.title}</h1></CardText>
           <CardText><h3>{book.writer}</h3></CardText>
           <CardText>{moment(book.date).format('llll')}</CardText>

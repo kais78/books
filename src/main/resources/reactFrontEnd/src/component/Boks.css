@@ -1,9 +1,11 @@
 .card{
     background: url(./Img/ba1.jpg) no-repeat;
-    background-size: 65%;
+    background-size: 80%;
     text-decoration-skip: black;
     box-shadow: 4px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.row{
-    margin: 0px;
+.card-img, .card-img-bottom, .card-img-top {
+    flex-shrink: 0;
+    width: 50%;
+    margin-left: 145px;
 }

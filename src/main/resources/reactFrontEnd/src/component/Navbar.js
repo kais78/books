@@ -11,7 +11,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText,
+  NavbarText,Card, Row,Col,CardImg,FormGroup,Label ,Input
 } from "reactstrap";
 
 const TopNavbar = (props) => {
@@ -37,9 +37,25 @@ const TopNavbar = (props) => {
                 <NavLink href="">Create Account</NavLink>
               </NavItem>
             </Nav>
-       
+          
         </Collapse>
       </Navbar>
+      <br/>
+      <Row>
+      <Col xs="6" sm="4">best Medical books</Col>
+        <Col sm={{ size: 'auto', offset: 6 }}> 
+        <UncontrolledDropdown>
+      <DropdownToggle caret>
+        Sort By
+      </DropdownToggle>
+      <DropdownMenu>
+        <DropdownItem>Old Date to new</DropdownItem>
+        <DropdownItem>New Date to Old</DropdownItem>
+        <DropdownItem disabled>Avg. Customer Review</DropdownItem>
+      </DropdownMenu>
+    </UncontrolledDropdown>
+      </Col>
+      </Row>
     </div>
   );
 };
