@@ -1,13 +1,13 @@
 .card{
     background: url(./Img/ba1.jpg) no-repeat;
-    background-size: 80%;
+    background-size: 75%;
     text-decoration-skip: black;
     box-shadow: 4px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .card-img, .card-img-bottom, .card-img-top {
     flex-shrink: 0;
     width: 50%;
-    margin-left: 145px;
+    margin-left: 170px;
 }
 .bak{
     background: url(./Img/55.jpg) center   no-repeat;

@@ -1,26 +1,25 @@
 import React, { useEffect, useState,useContext  } from "react";
-import { useParams, Link,Redirect } from "react-router-dom";
+import { useParams, Link, Redirect, withRouter } from "react-router-dom";
 import { Card, Button,Badge,CardImg,
   CardTitle, CardText, Row, Col } from 'reactstrap';
 import {BookContext} from '../contexts/BookContextProvider'
 import moment from 'moment';
 
 
-export default function ShowBook(props) {
-    const { deleteBook } = useContext(BookContext)
-    const [redirect, setRedirect] = useState(false)
-    let { id } = useParams();
-    const [book, setBook] = useState("");
+function ShowBook(props) {
+  const { deleteBook } = useContext(BookContext)
+  let { id } = useParams();
+  const [book, setBook] = useState("");
 
-    const getBook = async (id) => {
+  const getBook = async (id) => {
     let res = await fetch("/rest/books/" + id);
     res = await res.json();
     setBook(res);
   };
 
-  function removeMovie() {
+  function removeBook() {
     deleteBook(id)
-    setRedirect(true)
+    props.history.push('/')
   }
 
   useEffect(() => {
@@ -31,17 +30,15 @@ export default function ShowBook(props) {
     <div className='bak'>
         <br></br>
      <Row>
-     <Col sm="10" md={{ size: 3, offset: 2 }}>
-      {redirect??<Redirect to='/'/>}
+     <Col sm="10" md={{ size: 4, offset: 1 }} >
         <Card body>
-        <CardImg top width="100%" src={book.cover} alt="k" />
+        <CardImg top width="100%" src={book.cover} alt="k" style={{height:'14rem'}} />
           <CardText><h1>{book.title}</h1></CardText>
           <CardText><h3>{book.writer}</h3></CardText>
           <CardText>{moment(book.date).format('llll')}</CardText>
           <Col  sm={{ size: 'auto', offset: 8 }}>   
-               <Button onClick={() => deleteBook(id)} color="danger"outline>
-                DELETE<Badge color="secondary"> 
-                </Badge>
+               <Button onClick={() => removeBook()} color="danger"outline>
+                DELETE
                </Button>
           </Col>
         </Card>
@@ -53,3 +50,5 @@ export default function ShowBook(props) {
     </div>
     )
 }
+
+export default withRouter(ShowBook)

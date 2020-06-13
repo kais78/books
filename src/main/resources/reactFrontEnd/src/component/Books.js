@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { Card, Row,Col,CardImg} from 'reactstrap';
+import { Container, Card, Row, Col,CardImg} from 'reactstrap';
 import { BookContext } from '../contexts/BookContextProvider'
 import './Boks.css';
 import moment from 'moment';
@@ -9,40 +9,37 @@ import moment from 'moment';
 
 
 export default function Books() {
-  const { allBooks} = useContext(BookContext)
+  const { allBooks } = useContext(BookContext)
+
+  const sortedBooks = [...allBooks].sort((a, b) => {
+    return a.date - b.date;
+  });
+
 
   const list = () => {
-    return allBooks.map((book, i) => {
+    return sortedBooks.map((book, i) => {
       return (
-        
-        <div className='bak'>
-          <Row>
-         
-      </Row>
-       <br/>
-        <Row  xs="2">
-        <Col sm="10" md={{ size: 3, offset: 2 }}>
-          <Card body>
-          <CardImg top width="100%" src={book.cover} alt="k" />
+        <Col key={i} className="my-3">
+          <Card style={{height:"440px"}}>
+          <CardImg top width="100%" src={book.cover} alt="k" style={{height:'14rem'}}/>
 
           <Link style={{color:"black"}} to={`/${book.id}`}>
               <h1>{book.title}</h1>
               <p>{book.writer}</p>
-              {moment(book.date).format('l')}
+              {moment(book.date).format('llll')}
               </Link>
           </Card>
-        </Col>
-          <br></br>
-      </Row>
-      </div>    
+        </Col>  
       )
       
     })
   }
    
   return (
-    <>
-      {list()}
-    </>
+    <Container>
+      <Row xs="1" md="3">
+        {list()}
+      </Row>
+    </Container>
   )
 }

@@ -7,7 +7,7 @@ export default function AddBook(props) {
   const {appendBooks} = useContext(BookContext)
     const [title, settitle] = useState('');
     const [writer, setwriter] = useState('');
-    const [date, setdate] = useState('');
+    // const [date, setdate] = useState('');
     const [cover,setcover] = useState('');
 
     const addBook = async (e) => {
@@ -16,7 +16,7 @@ export default function AddBook(props) {
         const book = {
             title: title, 
             writer: writer,
-            date: +date,
+            date: Date.now(),
             cover:cover
           }
 
@@ -49,13 +49,8 @@ export default function AddBook(props) {
       </FormGroup>
 
       <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-        <Label for="date" className="mr-sm-2">DATE</Label>
-        <Input type="text" name="Date" id="date" placeholder="Date"  onChange={e=>setdate(e.target.value)} />
-      </FormGroup>
-
-      <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-        <Label for="cover" className="mr-sm-2">COVER</Label>
-        <Input type="text" name="cover" id="cover" placeholder="cover"  onChange={e=>setcover(e.target.value)}/>
+        <Label for="cover" className="mr-sm-2">book Picture</Label>
+        <Input type="text" name="book Picture" id="book Picture" placeholder="book Picture"  onChange={e=>setcover(e.target.value)}/>
       </FormGroup>
 
       <Button>Submit</Button>

@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react'
-import Books from "../component/Books";
 export const BookContext = createContext()
 
 export default function BookContextProvider(props) {
@@ -12,15 +11,14 @@ export default function BookContextProvider(props) {
   const fetchBooks = async () => {
     let res = await fetch('/rest/books')
     res = await res.json()
-    setAllBooks(res)
+    setAllBooks(res)    
   }
+  
   function deleteBook(id) {
-    setAllBooks(Books.filter(r => r.id !== id))
+    setAllBooks(allBooks.filter(r => r.id !== id))
     fetch('/rest/books/' + id, {
       method: 'DELETE'
     })
-   //updateAllBooks()
-    props.history.push('/')
   }
 
   useEffect(() => {

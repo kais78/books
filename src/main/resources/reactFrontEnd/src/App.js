@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Navbar from "./component/Navbar.js";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,9 +19,11 @@ function App() {
       <BookContextProvider>
       <Router>
         <Navbar />
+        <Switch>
         <Route exact path="/" component={Books} />
-        <Route exact path="/:id" children={<ShowBook />} />
         <Route exact path="/new" component={AddBook} />
+        <Route exact path="/:id" children={<ShowBook />} />
+        </Switch>
         <Footer />
       </Router>
       </BookContextProvider>

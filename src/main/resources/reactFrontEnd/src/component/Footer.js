@@ -5,34 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 const Footer = () => {
   return (
     <Container fluid className="bg-light border-top border-info mt-5">
-      <Container className="mt-5 mb-3 sticky-footer">
-        <Row className="font-small indigo ">
-          <Col sm="12" md="3" className="mb-3">
-            <h6 className="text-uppercase font-weight-bold text-center">
-              <Link to="/">Accomodation</Link>
-            </h6>
-          </Col>
-          <Col sm="12" md="3" className="mb-3">
-            <h6 className="text-uppercase font-weight-bold text-center">
-              <Link to="/about">Trvel Agencies</Link>
-            </h6>
-          </Col>
-          <Col sm="12" md="3" className="mb-3">
-            <h6 className="text-uppercase font-weight-bold text-center">
-              <Link to="/user-login">Logga in</Link>
-            </h6>
-          </Col>
-          <Col sm="12" md="3" className="mb-3 ">
-            <h6 className="text-uppercase font-weight-bold text-center text-info">
-              <Link to="/user-register">Facebook</Link>
-            
-            </h6>
-          </Col>
-        </Row>
-        <Row>
-          
-        </Row>
-      </Container>
+     
       <Row className='navco'>
         <Col md="12">© 2020 Clear BnB</Col>
       </Row>
