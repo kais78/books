@@ -30,15 +30,16 @@ export default function Books() {
               <p>{book.writer}</p>
               {moment(book.date).format('l')}
               </Link>
-          </Card><br></br>
+          </Card>
         </Col>
+          <br></br>
       </Row>
       </div>    
       )
       
     })
   }
- 
+   
   return (
     <>
       {list()}

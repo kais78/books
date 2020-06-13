@@ -46,6 +46,7 @@ export default function ShowBook(props) {
           </Col>
         </Card>
       </Col>
+      <Col sm="10" md={{ size: 5, offset: 1 }}><h2>Review</h2><h1>{book.title}</h1>{book.reviews}</Col>
       </Row>
      
 

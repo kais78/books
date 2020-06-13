@@ -29,16 +29,11 @@ const Footer = () => {
             </h6>
           </Col>
         </Row>
-        <hr className="rgba-white-light" />
         <Row>
           
         </Row>
-        <hr
-          className="clearfix d-md-none rgba-white-light"
-          style={{ margin: "10% 15% 5%" }}
-        />
       </Container>
-      <Row className="text-center py-3 bg-info text-white mt-3">
+      <Row className='navco'>
         <Col md="12">© 2020 Clear BnB</Col>
       </Row>
     </Container>
