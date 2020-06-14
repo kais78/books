@@ -10,8 +10,11 @@
     margin-left: 170px;
 }
 .bak{
+    margin-top: 120px;
     background: url(./Img/55.jpg) center   no-repeat;
     background-size: 100%;
+    box-shadow: 4px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
  }
   .navco{
     box-shadow: 8px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -23,8 +26,15 @@
 
       ) 
      }
+     .bak1{ margin-top: 70px;}
      h1{
          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      }
-  
+  .aa{
+    box-shadow: 8px 5px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  .listBook{
+      margin-top: 70px;
+  }
     

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { Container, Card, Row, Col,CardImg} from 'reactstrap';
 import { BookContext } from '../contexts/BookContextProvider'
@@ -12,7 +12,7 @@ export default function Books() {
   const { allBooks } = useContext(BookContext)
 
   const sortedBooks = [...allBooks].sort((a, b) => {
-    return a.date - b.date;
+    return b.date - a.date;
   });
 
 
@@ -20,8 +20,8 @@ export default function Books() {
     return sortedBooks.map((book, i) => {
       return (
         <Col key={i} className="my-3">
-          <Card style={{height:"440px"}}>
-          <CardImg top width="100%" src={book.cover} alt="k" style={{height:'14rem'}}/>
+          <Card style={{height:"auto"}}>
+          <CardImg className='aa'top width="100%" src={book.cover} alt="k" style={{height:'14rem'}}/>
 
           <Link style={{color:"black"}} to={`/${book.id}`}>
               <h1>{book.title}</h1>
@@ -36,7 +36,8 @@ export default function Books() {
   }
    
   return (
-    <Container>
+    <Container className='listBook'>
+      <h1>Medical books</h1><br></br>
       <Row xs="1" md="3">
         {list()}
       </Row>
