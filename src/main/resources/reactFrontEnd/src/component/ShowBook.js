@@ -1,7 +1,7 @@
 import React, { useEffect, useState,useContext  } from "react";
-import { useParams, Link, Redirect, withRouter } from "react-router-dom";
-import { Card, Button,Badge,CardImg,
-  CardTitle, CardText, Row, Col } from 'reactstrap';
+import { useParams,withRouter } from "react-router-dom";
+import { Card, Button,CardImg,
+   CardText, Row, Col } from 'reactstrap';
 import {BookContext} from '../contexts/BookContextProvider'
 import moment from 'moment';
 
@@ -24,15 +24,16 @@ function ShowBook(props) {
 
   useEffect(() => {
     getBook(id);
-  }, []);
+  },
+  []);
 
   return (
-    <div className='bak'>
+    <div className='bak1'>
         <br></br>
      <Row>
      <Col sm="10" md={{ size: 4, offset: 1 }} >
         <Card body>
-        <CardImg top width="100%" src={book.cover} alt="k" style={{height:'14rem'}} />
+        <CardImg className="imgeC" top width="100%" src={book.cover} alt="k" style={{height:'14rem'}} />
           <CardText><h1>{book.title}</h1></CardText>
           <CardText><h3>{book.writer}</h3></CardText>
           <CardText>{moment(book.date).format('llll')}</CardText>
